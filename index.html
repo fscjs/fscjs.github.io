@@ -308,6 +308,7 @@ changes owners, etc. URNs are intended to last forever.
 <div class="comment">
 	  <ul>
 	    <li>URL의 한계를 보완하기 위해 URN이라는 개념이 생겨남</li>
+		<li style="margin-left:10px; list-style:circle; color:#777"> URL은 도메인이 바뀌거나 서버상의 위치가 바뀔 경우, 리소스에 대한 접근성을 잃어버리거나 가리키는 리소스가 바뀔 수가 있음. 특정 고유한 리소스를 가리키는 고유한 식별자가 필요</li>
 		<li>URI는 URL과 URN을 포함하는 개념</li>
 		<li>URN은 비트코인의 해시 ID나 국제출판번호인 ISBN 넘버, MAC 주소 등 불변 값</li>
 	  </ul>
@@ -346,9 +347,10 @@ as distributed ledgers.
 <div class="comment">
 	  <ul>
 	    <li>분산형 식별자를 위한 새로운 유형의 URL사용</li>
+		<li style="margin-left:10px; list-style:circle; color:#777">URN과 흡사한 모양, 리소스를 참조할 수 있다는 성격은 URL과 흡사</li>
 		<li><b>추가 요구사항</b></li>
-		<li style="margin-left:10px">식별자를 등록, 확인, 업데이트, 해지를 위해 중앙 집중식 권한이 사용되지 않아야 함</li>
-		<li style="margin-left:10px">DID를 통한 인증은 공개키/비밀키를 이용한 암호학적인 방법으로 가능하다.</li>
+		<li style="margin-left:10px; list-style:circle;">식별자를 등록, 확인, 업데이트, 해지를 위해 중앙 집중식 권한이 사용되지 않아야 함</li>
+		<li style="margin-left:10px; list-style:circle;">DID를 통한 인증은 공개키/비밀키를 이용한 암호학적인 방법으로 가능하다.</li>
 	  </ul>
 </div>
       </section>
@@ -393,7 +395,7 @@ inherently correlatable, especially if they are globally unique.
 	  <ul>
 	    <li>전 세계적으로 공용되는 식별자를 사용하려면 사람이 이해하기 쉬운 형태이기 어려움</li>
 	    <li>주코의 삼각형으로 알려진 식별자에 관한 공리</li>
-		<li style="margin-left:10px"><b>human-meaningful, decentralized, secure 2가지만 선택</b></li>
+		<li style="margin-left:10px; list-style:circle;"><b>human-meaningful, decentralized, secure 2가지만 선택</b></li>
 		<li>이에 관해선 새로운 표준 필요 할 것(본 표준의 범위에서 벗어남)</li>
 	  </ul>
 </div>
@@ -444,8 +446,8 @@ see the DID Method Registry [[DID-METHOD-REGISTRY]].
 <div class="comment">
 	<b>이 규격(DID Specification)과 DID 메소드 규격(Method Specification)의 관계</b>
 	  <ul>
-	    <li>URI 표준 규격과 특정 URI 체계의 관계와 유사</li>
-		<li>즉, URI가 어떻게 정의되어야 한다는 내용과, http:// 체계는 어떻게 정의되어야 한다는 내용의 관계와 유사함. 메소드 규격은 단순히 표면적으로 나타내지는 체계보다 더 깊게, DID 레코드를 읽고, 쓰고, 파기하는 방법까지 지정되어야 함.</li>
+	    <li><b>URI 표준 규격</b>과 <b>특정 URI 체계</b>의 관계와 유사</li>
+		<li>즉, URI가 어떻게 구성되어야 한다는 규격과, 그 중에서 http:// URI 체계는 어떻게 구성되어야 한다는 내용의 관계와 유사함. 메소드 규격은 단순히 표면적으로 나타내지는 체계보다 더 깊게, DID 레코드를 읽고, 쓰고, 파기하는 방법까지 지정되어야 함.</li>
 	  </ul>
 </div>
       </section>
@@ -946,6 +948,29 @@ The JSON-LD specification enables the layering of data semantics on
 top of JSON data.
         </dd>
       </dl>
+	  
+<div class="comment">
+	  <b>JSON-LD: JSON을 이용해 Linked Data를 표현하기 위한 구조화된 포맷</b>
+	  <br><br>
+	  ※ JSON과 JSON-LD의 차이점을 이해하기 위한 Android layout XML
+	  <pre>
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical" &gt;
+    &lt;TextView android:id="@+id/text"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Hello, I am a TextView" /&gt;
+    &lt;Button android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello, I am a Button" /&gt;
+&lt;/LinearLayout&gt;
+	  </pre>
+</div>
+
     </section>
   </section>
 
@@ -1048,7 +1073,7 @@ authors at the time of publication.
 	  <ul>
 	    <li>DID 메소드 규격은 정확히 한개의 DID 메소드와, DID 스키마 규칙을 정의하여야 한다.</li>
 		<li>DID는 탈중앙화된 체계에 기반하므로, 메소드 등록기관은 두지 않는 것이 권장된다.</li>
-		* 현재 나와있는 did:btcr, did:stack, did:sov와 같은 메소드 명들은 특정 기관을 두고 등록하는 것이 아니라 시장 자율에 의해, 사람들의 일반적인 인식, 합의(consensus)에 의해 발행되어야 함
+		* 현재 나와있는 did:<b>btcr</b>, did:<b>stack</b>, did:<b>sov</b>와 같은 메소드 명들은 특정 기관을 두고 등록하는 것이 아니라 시장 자율에 의해, 사람들의 일반적인 인식, 합의(consensus)에 의해 발행되어야 함
 	  </ul>
 </div>
       <p>
@@ -1286,6 +1311,12 @@ However it is NOT RECOMMENDED to define a new context unless
 necessary to properly implement the method. Method-specific contexts
 MUST NOT override the terms defined in the generic DID context.
       </p>
+	  
+<div class="comment">
+	  <ul>
+	    <li>최상위 context로 "https://w3id.org/did/v1"를 포함해야 함</li>
+	  </ul>
+</div>
     </section>
 
     <section>
@@ -1334,6 +1365,11 @@ a DID Document that do not contain the <code>id</code> key, such as
 when a DID Resolver is performing resolution. However, the fully
 resolved DID Document MUST contain a valid <code>id</code> property.
       </p>
+<div class="comment">
+	  <ul>
+	    <li>subject는 그 did 문서의 제목, id이자, did 그 자체</li>
+	  </ul>
+</div>
     </section>
     <!-- section>
 <h2>Delegates</h2>
@@ -1461,6 +1497,12 @@ also contain or refer to the revocation information for the key (e.g.,
 a revocation list). Each DID Method specification is expected to
 detail how revocation is performed and tracked.
       </p>
+	  
+<div class="comment">
+	  <ul>
+	    <li>DID 문서에 포함되는 Public Key는 인증, 전자서명 등 각종 암호학적인 동작에 사용됨</li>
+	  </ul>
+</div>
 
       <p>
 The rules for public keys are:
@@ -1533,7 +1575,11 @@ A key may be <em>embedded</em> or <em>referenced</em> in a <a>DID
 Document</a>. For example, the <code>authentication</code> property
 may refer to keys in both ways:
       </p>
-
+<div class="comment">
+	  <ul>
+	    <li>Public Key는 문서에 포함될 수도 있고 다른 DID를 참조하는 형태일 수도 있음</li>
+	  </ul>
+</div>
       <pre class="example nohighlight" title="Various public keys">
 {
 ...
@@ -1603,7 +1649,11 @@ mandatory public cryptographic material, as determined by the
         <em>result</em>'s <code>type</code> property, throw an error.
         </li>
       </ol>
-
+<div class="comment">
+	  <ul>
+	    <li>프로그램 알고리즘에서 Public Key를 읽는 방법을 설명</li>
+	  </ul>
+</div>
       <p class="note">
 While the <code>owner</code> field may seem redundant in some of the
 examples above, keys may be expressed in a DID Document where the
@@ -1636,7 +1686,13 @@ may wish to enable other entities to update the DID Document (for
 example, to assist with key recovery as discussed in Section <a href="#key-revocation-and-recovery"></a>) without enabling them to prove
 ownership (and thus be able to impersonate the entity).
       </p>
-
+<div class="comment">
+	  <ul>
+	    <li>어떤 개체가 DID에 대한 권한(연관)이 있다는 것을 암호학적으로 증명하는 매커니즘</li>
+		<li>DID 문서의 Authentication 속성 값은 인증 type을 포함하여야 한다.</li>
+		<li>표준화된 type에 따라서 인증 수행 가능</li>
+	  </ul>
+</div>
       <p>
 The rules for Authentication are:
       </p>
@@ -1726,6 +1782,11 @@ provide more fine-grained control of authorization, delegation, and
 guardianship.
         </li>
       </ol>
+<div class="comment">
+	  <ul>
+	    <li>승인과 위임은 DLT(각 블록체인)에서 제공하는 기능이므로 "DID 메소드 규격"에서 그 과정을 상세히 정의하고 설명해두어야 함</li>
+	  </ul>
+</div>
     </section>
 
     <section>
@@ -1823,6 +1884,13 @@ See Sections <a href="#specific-did-method-schemes"></a>
 and <a href="#authentication"></a> for further security
 considerations regarding authentication service endpoints.
       </p>
+<div class="comment">
+	  <ul>
+	    <li>DID는 단지 인증기능만을 가진 것이 아님</li>
+		<li>DID 메소드에 따라 신원 검색, 인증, 허가 등 상호작용을 위한 기능을 제공할 수 있음</li>
+		<li>Service Endpoint는 표준 URI 형태여야 함</li>
+	  </ul>
+</div>
     </section>
 
     <section>
@@ -1910,6 +1978,11 @@ Example:
   "updated": "2016-10-17T02:41:00Z"
 }
 </pre>
+<div class="comment">
+	  <ul>
+	    <li>생성일자, 수정일자 표현을 위한 created, updated 속성을 포함할 수 있으며, 표준화된 표기법을 사용해야 함</li>
+	  </ul>
+</div>
     </section>
 
     <section>
@@ -1969,6 +2042,12 @@ Example:
   }
 }
 </pre>
+<div class="comment">
+	  <ul>
+	    <li>DID 문서의 무결성을 증명하기 위한 proof 포함 가능</li>
+		<li>Linked Data Proofs 표준에 맞는 proof 값이어야 함</li>
+	  </ul>
+</div>
     </section>
 
     <section>
@@ -1981,7 +2060,13 @@ One of the goals of the Decentralized Identifiers Data Model is to
 enable permissionless innovation. This requires that the data model
 is extensible in a number of different ways:
       </p>
-
+<div class="comment">
+	  <ul>
+	    <li>DID는 단지 인증기능만을 가진 것이 아님</li>
+		<li>DID 메소드에 따라 신원 검색, 인증, 허가 등 상호작용을 위한 기능을 제공할 수 있음</li>
+		<li>Service Endpoint는 표준 URI 형태여야 함</li>
+	  </ul>
+</div>
       <ul>
         <li>
 The requirement to model complex multi-entity relationships is
@@ -2009,7 +2094,12 @@ developers and web page authors is enabled via the use of
 [[!JSON-LD]].
         </li>
       </ul>
-
+<div class="comment">
+	  <ul>
+	    <li>DID는 허가 없는 발전을 지향함</li>
+		<li>산업계의 신기술 발전화 표준화에 맞추어 시장 자율로 제한 없이 발전될 수 있음</li>
+	  </ul>
+</div>
       <p>
 This approach to data modeling is often called an "open world
 assumption", meaning that any entity can say anything about any other
@@ -2046,7 +2136,14 @@ that a developer wanted to extend the <a>DID Document</a> to express
 an additional piece of information: the subject's public photo
 stream.
       </p>
-
+<div class="comment">
+	  <ul>
+	    <li>DID 문서를 확장하여 '증명사진' 제공 서비스를 추가한다고 가정</li>
+		<li>1. JSON-LD 컨텍스트 생성</li>
+		<li>2. JSON-LD 컨텍스트 참조</li>
+		<li>2. JSON-LD 컨텍스트에 맞는 서비스 엔드포인트 개발</li>
+	  </ul>
+</div>
       <p>
 The first thing that a developer would do is create a JSON-LD Context
 containing the new term:
@@ -2174,7 +2271,11 @@ Key recovery
 Key expiration
       </li>
     </ul>
-
+<div class="comment">
+	  <ul>
+	    <li>DID 메소드 규격은 클라이언트가 수행할 수 있는 기본적인 CRUD를 위한 동작을 정의 해야 함</li>
+	  </ul>
+</div>
     <section>
       <h2>
 Create
@@ -2259,6 +2360,13 @@ MAY offer the service of returning requested properties of the DID
 Document.
       </li>
     </ol>
+<div class="comment">
+<b>DID 조회 요청을 수락하고, DID 메소드를 이용하여 DID 문서를 조회하고 검증하는 프로그램</b>
+	  <ul>
+		<li>DID 메소드 규격의 요구사항을 만족 해야 함</li>
+		<li>DID 문서의 무결성을 검증할 수 있어야 함</li>
+	  </ul>
+</div>
   </section>
 
   <section>
@@ -2288,7 +2396,12 @@ allow operation on passively monitored networks without risking
 compromise of private keys. This is what makes DID architecture and
 decentralized identity possible.
     </p>
-
+<div class="comment">
+	  <ul>
+		<li>분산원장과 공개키 암호화 방식은 그 자체의 안전성을 가지고 있지만, DID는 일반적인 네트워크 환경에서 구현되는 모델이므로 일반적인 보안성에 대해 고려 하여야 함</li>
+		<li>DID 메소드 규격은 최소한 RFC3552에서 정하는 보안고려사항을 포함하여 자체적으로 보안 고려사항을 정의하여 포함시켜야 함</li>
+	  </ul>
+</div>
     <section>
       <h2>
 Requirements of DID Method Specifications
@@ -2375,6 +2488,16 @@ types (Section <a href="#service-endpoints"></a>) SHOULD consider the
 security requirements of the supported authentication protocol.
         </li>
       </ol>
+<div class="comment">
+	<b>"DID 메소드 규격"의 보안 고려사항에서는</b>
+	  <ul>
+		<li>도청, 재시도, 메시지 삽입, 서비스 거부 공격에 대해 고려해야 함</li>
+		<li>암호화 대상, 기밀 유지 대상 값/범위 등을 명확히 해야 함</li>
+		<li>인증 과정에서의 보안성 유지에 대해 명확히 해야 함</li>
+		<li>메소드별 서비스 엔드포인트 인증에 대해 논의해야 함. 경량 노드 등을 지원하는 경우 DID 메소드 구현에 관한 보안성을 논의해야 함</li>
+		<li>DID가 고유하게 할당되는 부분에 관해, URN 표준에 부함하도록 정책 메커니즘을 논의 해야 한다.</li>
+	  </ul>
+</div>
     </section>
 
     <section>
@@ -2439,6 +2562,12 @@ explain and specify their implementation if applicable.
         <p>
 It is RECOMMENDED to combine timestamps with signatures.
         </p>
+<div class="comment">
+	  <ul>
+		<li>DID 문서에 대한 서명은 필수가 아니며, 서명 그 자체로는 무결성에 대한 증명만 가능함<br>(소유권에 대한 증명이 아님)</li>
+		<li>소유권에 대한 증명은 1. DID가 제시되고, DID 메소드 규격에 맞게 DID 문서를 검색하고, 2. 검색된 문서의 ID가 제시된 DID와 일치하는지를 확인함으로써 가능하다.</li>
+	  </ul>
+</div>
       </section>
 
       <section>
@@ -2468,6 +2597,13 @@ Verify the signature of the response message against the public
 key description.
           </li>
         </ol>
+<div class="comment">
+	공개키의 소유권을 증명하기 위한 방식은 2가지
+	<ul>
+		<li>1. 정적 방식: 문서에 비밀키 서명값을 포함</li>
+		<li>2. 동적 방식: Challenge-response 방식으로 검증</li>
+	</ul>
+</div>
       </section>
 
       <section>
@@ -2483,6 +2619,15 @@ about the owner is out of scope for this specification. However
 this topic is the focus of the <a href="https://w3c.github.io/vctf/">verifiable claims</a> standardization
 work at the W3C (where the term "DID" originated).
         </p>
+		
+<div class="comment">
+	<ul>
+		<li>DID는 어떤 개인정보도 포함하지 않음</li>
+		<li>식별자 주체에 대한 신원 주장을 DID로 어떻게 증명할지는 이 표준의 범위에서 벗어남<br>
+			(W3C Verifiable Claim 표준화 작업 별도 진행)
+		</li>
+	</ul>
+</div>
       </section>
     </section>
 
@@ -2498,6 +2643,11 @@ endpoint provider, entity, and/or relying party to comply with the
 requirements of the authentication protocol(s) supported at that
 service endpoint.
       </p>
+<div class="comment">
+	<ul>
+		<li>DID 문서에서 인증 또는 승인 기능을 포함하는 경우, 그 인증 프로토콜의 요구사항을 준수하는 것은 참여자들의 책임이다.</li>
+	</ul>
+</div>
     </section>
 
     <section>
@@ -2515,6 +2665,11 @@ timestamps are included (sections <a href="#created-optional"></a>
 and <a href="#updated-optional"></a>) and the target DLT system
 supports timestamps.
       </p>
+<div class="comment">
+	<ul>
+		<li>부인방지 DID 문서 업데이트가 지원되려면, Revoke와 Timestamp(created, updated) 등이 지원되어야 한다.</li>
+	</ul>
+</div>
     </section>
 
     <section>
@@ -2550,6 +2705,11 @@ Third-party monitoring. An entity may rely on a third party
 monitoring service, however this introduces another vector of attack.
         </li>
       </ol>
+<div class="comment">
+	<ul>
+		<li>DID 무단 변경에 대한 방지책으로, DID 주체에 대한 알림(연락)지원, DID 문서 변경 확인을 위한 모니터링 도구 사용, 제3자 모니터링 위탁이 있음</li>
+	</ul>
+</div>
     </section>
 
     <section>
@@ -2566,6 +2726,11 @@ may have legitimate reasons why already-expired keys can be extended, a key
 expiration SHOULD NOT prevent any further use of the key, and implementations
 of a resolver SHOULD be compatible with such extension behavior.
       </p>
+<div class="comment">
+	<ul>
+		<li>분산형 식별자 아키텍쳐에서 전자서명 만료를 관리하는 중앙집중식 기관이 존재하지 않으므로 참여자가 DID 사용시점에 키나 서명의 만료여부를 잘 체크하여야 한다.</li>
+	</ul>
+</div>
     </section>
 
     <section>
@@ -2592,6 +2757,12 @@ against key compromise by maintaining a second track of control for
 recovery. Further specification of this type of control is a matter
 for future work (see section <a href="#time-locks-and-did-document-recovery"></a>).
       </p>
+<div class="comment">
+	<ul>
+		<li>DID 문서 폐지 및 갱신 기능이 있어야 한다.(MUST)</li>
+		<li>DID key 복구를 위한 기능이 제시되어야 한다.(SHOULD)</li>
+	</ul>
+</div>
     </section>
   </section>
 
@@ -2635,6 +2806,12 @@ compromise, unsolicited traffic, misattribution, correlation,
 identification, secondary use, disclosure, exclusion.
         </li>
       </ol>
+<div class="comment">
+	<ul>
+		<li>DID 메소드 규격은 프라이버시에 관한 섹션을 반드시 포함해야 함</li>
+		<li>프라이버시에 관하여 RFC6973의 섹션5 내용에 대해 논의 해야 함</li>
+	</ul>
+</div>
     </section>
 
     <section>
@@ -2655,6 +2832,12 @@ enables entities and relying parties to implement the <a href="https://en.wikipe
 to be forgotten</a>, as no PII will be written to an immutable
 ledger.
       </p>
+<div class="comment">
+	<ul>
+		<li>DID 문서에 어떠한 개인정보도 포함하지 않을 것을 <b>영구적으로 권장함</b></li>
+		<li>off-ledger 방식으로 GDPR의 잊혀질 권리 만족 가능</li>
+	</ul>
+</div>
     </section>
 
     <section>
@@ -2673,6 +2856,11 @@ If pseudonymous DIDs are the default, then the only need for a public
 DID—a DID published openly or shared with a large number of
 parties—is when the entity explicitly desires public identification.
       </p>
+<div class="comment">
+	<ul>
+		<li>서비스마다 필요한 DID를 별도로 만들어 사용함으로써 가명성을 유지할 수 있음</li>
+	</ul>
+</div>
     </section>
 
     <section>
@@ -2697,6 +2885,12 @@ Therefore, a better strategy for endpoint privacy may be to share an
 endpoint among thousands or millions of DIDs owned by many different
 entities.
       </p>
+<div class="comment">
+	<ul>
+		<li>DID 문서들과의 유사 관계(같거나 유사한 형태의 publicKey description, service endpoint 등)를 통해 가명화가 무색해질 수 있음</li>
+		<li>DID 문서마다 각기 다른 키를 사용해야 함</li>
+	</ul>
+</div>
     </section>
 
     <section>
@@ -2717,6 +2911,11 @@ implementations, keep negotiated options to a minimum on wire
 protocols, use encrypted transport layers, and pad messages to
 standard lengths.
       </p>
+<div class="comment">
+	<ul>
+		<li>DID를 이용하는 집단 내에서 digital fingerprint를 통해 개인이 식별되지 않도록 common setting, minimum wire protocol, pad mesage 등을 사용해야 함</li>
+	</ul>
+</div>
     </section>
   </section>
 
@@ -2741,6 +2940,11 @@ DIDs intended for temporary use. A future version of this
 specification should set reasonable limits on DID character length to
 minimize externalities.
       </p>
+<div class="comment">
+	<ul>
+		<li>DID의 상호운용성, 범용성을 고려하여 DID 문자열 길이에 대한 한도를 설정할 계획</li>
+	</ul>
+</div>
     </section>
 
     <section>
@@ -2763,6 +2967,11 @@ methods, and also of aggregating properties of equivalent DID
 Documents. However equivalence should be supported in a future
 version of this specification.
       </p>
+<div class="comment">
+	<ul>
+		<li>같은 개체를 지칭하는 여러개의 DID를 설정할 수 있도록 할 예정</li>
+	</ul>
+</div>
     </section>
 
     <section>
@@ -2785,6 +2994,11 @@ either individual transactions or transaction batches. The generic
 mechanism was deemed out of scope for this version, although it may
 be included in a future version of this specification.
       </p>
+<div class="comment">
+	<ul>
+		<li>증명가능한 타임스탬프 매커니즘(비트코인에서 다루어진 개념)에 대해 다룰 예정</li>
+	</ul>
+</div>
     </section>
 
     <section>
@@ -2804,6 +3018,11 @@ chain, enabling a Authorization block to be used to recover control.
 We plan to add support for time locks in a future version of this
 specification.
       </p>
+<div class="comment">
+	<ul>
+		<li>Key 폐기 시 Time lock 매커니즘(비트코인에서 다루어진 개념)에 대해 다룰 예정</li>
+	</ul>
+</div>
     </section>
 
     <section>
@@ -2819,6 +3038,11 @@ future solution is a <a href="http://www.weboftrust.info/downloads/smart-signatu
 Signature</a> specification that specifies the code any conformant
 DLT may implement to process signature control logic.
       </p>
+<div class="comment">
+	<ul>
+		<li>현재는 서명, 인증을 DID 메소드 규격에 위임하여 정의하도록 하고 있지만, 추후 Smart Signature라는 표준화된 규격을 제정 예정</li>
+	</ul>
+</div>
     </section>
 
     <section>
@@ -2835,6 +3059,11 @@ claims</a>. Future versions of the specification will describe in
 more detail how DIDs and DID Document can be integrated with—and help
 enable—the verifiable claims ecosystem.
       </p>
+<div class="comment">
+	<ul>
+		<li>DID는 단순히 개체를 표현하는 식별자 개념. 신분 증명기능이 더해져야 완성될 수 있음. 추후엔 Verifiable Claim과의 연동에 대해 더 다룰 것</li>
+	</ul>
+</div>
     </section>
 
     <section>
@@ -2850,6 +3079,11 @@ Document, such as JXD (JSON XDI Data), a serialization format for the
 XDI graph model as defined by the <a href="http://docs.oasis-open.org/xdi/xdi-core/v1.0/csd01/xdi-core-v1.0-csd01.xml">
 OASIS XDI Core 1.0 specification</a>.
       </p>
+<div class="comment">
+	<ul>
+		<li>JSON-LD 외에도 다른 표현 수단에 대해 다룰 것</li>
+	</ul>
+</div>
     </section>
   </section>
 
